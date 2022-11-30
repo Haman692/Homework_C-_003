@@ -1,10 +1,16 @@
 ﻿// Задача 19 Запишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
 Console.Clear();
-Console.WriteLine("Введите пятизначное число");
-string number = Console.ReadLine();
-char [] arr = number.ToCharArray();
-Console.WriteLine(arr);
-char arr2 = arr.Reverse(arr2);
-if (arr == arr.Reverse(arr2)) 
-    Console.WriteLine("Паледроп");
+Console.WriteLine("Введите число");
+int number = Convert.ToInt32(Console.ReadLine());
+int revNumber = number;
+string strNumber = revNumber.ToString();
+char[] arrNumber = strNumber.ToCharArray();
+Array.Reverse(arrNumber);
+strNumber = new string(arrNumber);
+revNumber = Convert.ToInt32(strNumber);
+
+if(number == revNumber)
+    Console.WriteLine($"Число {number} являеться палиндромом");
+else
+    Console.WriteLine($"Число {number} не являеться палиндромом");
